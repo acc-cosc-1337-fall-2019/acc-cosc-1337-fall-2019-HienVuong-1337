@@ -21,4 +21,5 @@ TEST_CASE("Test get generation")
 	REQUIRE(get_generation(1960) == "Baby Boomer");
 	REQUIRE(get_generation(1940) == "Silent Generation");
 	REQUIRE(get_generation(1776) == "Invalid");
+	REQUIRE(get_generation(1776) == "Invalid");
 }
