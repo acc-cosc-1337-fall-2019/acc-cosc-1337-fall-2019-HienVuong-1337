@@ -1,4 +1,4 @@
-#include "sample_for.h"
+#include "for.h"
 #include<iostream>
 
 //Write code for function display_numbers that accepts a number and 
@@ -15,3 +15,12 @@ RESULT:
 
 */
 
+void display_numbers(int num)
+{
+	for (int i = 1; i <= num; ++i) //no ; on for loop header
+	{
+		std::cout << i << "\n"; 
+		//include <iostream> is in the cpp file but not header file and since we
+		//are only using it here, use the format namespace::cout	
+	}
+}
