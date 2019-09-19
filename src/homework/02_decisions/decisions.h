@@ -10,3 +10,10 @@ int get_grade_points(std::string letter_grade);
 //an double named credit_points returns double.  
 double calculate_gpa(int credit_hours, double credit_points);
 
+
+//Function prototype with name get_letter_grade_using_if that accepts int grade and returns
+//a string, the letter grade
+
+
+//Function prototype with name get_letter_grade_using_switch that accepts int grade and  returns
+//a string, the letter grade
