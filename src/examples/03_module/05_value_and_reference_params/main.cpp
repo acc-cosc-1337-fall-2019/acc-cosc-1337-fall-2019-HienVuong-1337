@@ -9,9 +9,9 @@ int main()
 	int &num_ref = num;
 	std::cout << num_ref << "\n";
 
-	int num_ref = 10;
+	/*int num_ref = 10;
 	std::cout << num_ref << "\n";
-	std::cout << num << "\n";
+	std::cout << num << "\n";*/
 
 	return 0;
 }
