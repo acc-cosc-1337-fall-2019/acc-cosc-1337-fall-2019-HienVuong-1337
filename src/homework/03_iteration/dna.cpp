@@ -35,12 +35,12 @@ accepts a string parameter and returns a string reversed.
 
 string get_reverse_string(string dna)
 { 
-	string reverse_dna;
+	string reverse_dna ="";
 	
 	for (int i = dna.size() - 1; i >= 0; i--)
 	{
-		reverse_dna = dna[i];
-		
+		reverse_dna += dna[i];
+	
 	}
 	return reverse_dna;
 }
