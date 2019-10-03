@@ -3,8 +3,8 @@
 #include<iostream>
 #include<vector>
 
-using std:vector;
-using std:cout;
+using std::vector;
+using std::cout;
 
 /*
 Create a vector of rectangles
@@ -26,7 +26,6 @@ int main()
 	for (auto rec : rectangles) //for rec in rectangles list, iterate
 	{
 		cout << "Area: " << rec.get_area() << "\n";
-
 	}
 	return 0;
 }
