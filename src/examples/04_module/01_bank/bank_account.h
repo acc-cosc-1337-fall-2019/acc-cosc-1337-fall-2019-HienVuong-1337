@@ -1,5 +1,11 @@
 //bank_account.h
 
+//header guards to prevent class redefinition error
+#ifndef BANK_ACCOUNT_H 
+#define BANK_ACCOUNT_H
+
+#endif // !BANK_ACCOUNT.H
+
 //defining a class will include keyword class, name of class, {} and ;
 
 class BankAccount
