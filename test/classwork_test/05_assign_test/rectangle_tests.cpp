@@ -2,12 +2,13 @@
 #include "catch.hpp"
 #include "rectangle.h"
 
+
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-TEST_CASE("Test rectangle initialize") 
+TEST_CASE("Test rectangle initialize")
 {
-	Rectanglee r(4,5);
-	REQUIRE(r.get_area()== 20);
+acc:Rectangle r(4,5);
+	REQUIRE(r.get_area() == 20);
 }
