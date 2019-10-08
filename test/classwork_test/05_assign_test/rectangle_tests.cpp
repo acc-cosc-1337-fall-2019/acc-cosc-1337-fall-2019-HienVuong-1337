@@ -9,6 +9,6 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Test rectangle initialize")
 {
-	acc:Rectangle r(4, 5);
+	acc::Rectangle r(4, 5);
 	REQUIRE(r.get_area() == 20);
 }
