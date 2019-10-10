@@ -7,7 +7,7 @@
 
 using std::cout;
 
-ATM::ATM(BankAccount a) :account(1000)
+ATM::ATM(BankAccount a) :account(1000) //initialize class parameter a to BankAccount; copy constructor
 //ATM::ATM() : account(1000)
 {
 	//have a class that gets balance from DB
@@ -25,5 +25,5 @@ void ATM::withdraw(int amount)
 
 void ATM::display_balance() const
 {
-	cout << "Balance: " << account.get_balance();
+	cout << "Balance: " << account.get_balance() << "\n";
 }

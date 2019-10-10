@@ -7,7 +7,7 @@
 class ATM
 {
 public:
-	ATM(BankAccount a);
+	ATM(BankAccount a); //contructor accepts BankAccount with parameter a
 	//ATM(BankAccount);
 	void deposit(int amount);
 	void withdraw(int amount);
