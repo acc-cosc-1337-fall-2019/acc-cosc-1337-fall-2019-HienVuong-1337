@@ -25,7 +25,11 @@ int main()
 
 	for (auto rec : rectangles) //for rec in rectangles list, iterate
 	{
-		cout << "Area: " << rec.get_area() << "\n";
+		//cout << "Area: " << rec.get_area() << "\n";
+		cout << rec;
 	}
+
+	
+
 	return 0;
 }
