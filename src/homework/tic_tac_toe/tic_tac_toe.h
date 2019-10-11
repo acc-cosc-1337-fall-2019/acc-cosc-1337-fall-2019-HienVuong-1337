@@ -6,6 +6,8 @@
 using std::string;
 using std::vector;
 using std::cout;
+using std::cin;
+
 
 /*
 Represents one game of tic tac toe.
