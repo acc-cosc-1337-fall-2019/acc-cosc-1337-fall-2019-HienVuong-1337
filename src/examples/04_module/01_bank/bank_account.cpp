@@ -5,12 +5,10 @@
 
 BankAccount::BankAccount()
 {
-	//normally there would be code to read balance from database but for class example we 
-	//are declaring balance here
 	balance = 500;
 }
 
-//class BankAccount needs to be specified in the function or else it will be a free function
+
 void BankAccount::deposit(int amount)
 {
 	if (amount > 0)
@@ -25,6 +23,15 @@ void BankAccount::withdraw(int amount)
 	{
 		balance -= amount;
 	}
+}
+
+BankAccount BankAccount::operator+(const BankAccount & b)
+{
+
+	BankAccount account;
+	account.balance = balance + b.balance;
+
+	return account;
 }
 
 
@@ -59,3 +66,4 @@ std::istream & operator>>(std::istream & in, BankAccount & b)
 
 	return in;
 }
+

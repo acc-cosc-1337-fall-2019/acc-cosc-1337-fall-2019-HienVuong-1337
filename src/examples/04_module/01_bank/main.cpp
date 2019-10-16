@@ -12,11 +12,16 @@ using std::vector;
 int main()
 {
 	CheckingAccount a(1500);
-	cout << a.get_balance();
+	cout << a;
 
 	SavingsAccount savings(500);
+	cout << "Calls bank account overload ostream, " << savings;
+	cout << "\n Svaings get_balance, " << savings.get_balance() << "\n";
 	savings.add_interest();
 	cout << savings;
+
+	BankAccount c = a + savings;
+	cout << c;
 
 	return 0;
 }
