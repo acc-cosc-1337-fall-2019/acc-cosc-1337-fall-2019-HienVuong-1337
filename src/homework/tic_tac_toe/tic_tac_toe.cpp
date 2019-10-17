@@ -38,13 +38,10 @@ string TicTacToe::get_player() const
 //outer loop displays columns and inner loop displays rows
 void TicTacToe::display_board() const
 {
-	for (int i = 0; i < 3; i++)
+	for (std::size_t i = 0; i < 9; i += 3)
 	{
-		for (int j = 0; j < 3; j++)
-		{
-			cout << pegs[i][j] << " ";
-		}
-		cout << "\n";
+		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2]<<"\n";
+
 	}
 }
 
@@ -77,12 +74,13 @@ bool TicTacToe::check_column_win()
 
 bool TicTacToe::check_row_win()
 {
-	for (std::size_t i = 0; i < 9; i += 3)
+	for (std::size_t i = 0; i < 9; i+=3)
 	{
 		if (pegs[i] == pegs[i + 1] && pegs[i + 1] == pegs[i + 2] && pegs[i + 2] != " ")
 		{
 			return true;
 		}
+	
 	}
 	return false;
 }
