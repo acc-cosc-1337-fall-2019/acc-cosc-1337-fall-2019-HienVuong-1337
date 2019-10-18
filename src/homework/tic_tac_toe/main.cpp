@@ -29,13 +29,12 @@ int main()
 
 		do
 		{
-			cout << "\nEnter a position from 1 to 9: ";
-			cin >> position;
-			game1.mark_board(position);
-			game1.display_board();
+			cin >> game1;
+			cout << game1;
 
 		} while (game1.game_over() == false);
 
+		cout << "Winner!\n";
 		cout << "Enter 1 to play again, any other key to exit: \n";
 		cin >> menu_option;
 	

@@ -35,16 +35,6 @@ string TicTacToe::get_player() const
 	return next_player;
 }
 
-//outer loop displays columns and inner loop displays rows
-void TicTacToe::display_board() const
-{
-	for (std::size_t i = 0; i < 9; i += 3)
-	{
-		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2]<<"\n";
-
-	}
-}
-
 
 void TicTacToe::set_next_player()
 {
@@ -128,3 +118,25 @@ bool TicTacToe::check_board_full()
 	return true;
 
 }
+
+std::istream & operator>>(std::istream & in, TicTacToe & a)
+{
+	int position;
+	cout << "\nEnter a position from 1 to 9: ";
+	in >> position;
+	a.mark_board(position);
+
+	return in;
+
+}
+
+
+std::ostream & operator<<(std::ostream & out, const TicTacToe & a)
+{
+	for (std::size_t i = 0; i < 9; i += 3)
+	{
+		out << a.pegs[i] << " | " << a.pegs[i + 1] << " | " << a.pegs[i + 2] << "\n";
+	}
+	return out;
+}
+
