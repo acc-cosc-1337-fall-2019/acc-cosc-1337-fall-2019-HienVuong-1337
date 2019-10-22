@@ -1,12 +1,17 @@
 //cpp
 #include "tic_tac_toe.h"
 
-
 bool TicTacToe::game_over()
 {
 	if (check_column_win() || check_row_win() ||
-		check_diagonal_win() || check_board_full())
+		check_diagonal_win())
 	{
+		set_winner();
+		return true;
+	}
+	else if (check_board_full())
+	{
+		winner = "C";
 		return true;
 	}
 	return false;
@@ -19,20 +24,27 @@ void TicTacToe::start_game(string player)
 	clear_board();
 }
 
-/*
-Remember position is what user sees.
-When you save position to vector, subtract 1 from position.
-*/
+
 void TicTacToe::mark_board(int position)
 {
 	pegs[position - 1] = next_player;
-	set_next_player();
+
+	if (game_over() == false)
+	{
+		set_next_player();
+	}
 }
 
 
 string TicTacToe::get_player() const
 {
 	return next_player;
+}
+
+
+string TicTacToe::get_winner() const
+{
+	return winner;
 }
 
 
@@ -70,7 +82,6 @@ bool TicTacToe::check_row_win()
 		{
 			return true;
 		}
-	
 	}
 	return false;
 }
@@ -102,8 +113,6 @@ void TicTacToe::clear_board()
 }
 
 
-//at lesat one value is " ", return false, else return true
-//not all control paths return a value?
 bool TicTacToe::check_board_full()
 {
 	for (std::size_t i = 0; i < 9; i++)
@@ -112,12 +121,10 @@ bool TicTacToe::check_board_full()
 		{
 			return false;
 		}
-		
 	}
-
 	return true;
-
 }
+
 
 std::istream & operator>>(std::istream & in, TicTacToe & a)
 {
@@ -127,7 +134,6 @@ std::istream & operator>>(std::istream & in, TicTacToe & a)
 	a.mark_board(position);
 
 	return in;
-
 }
 
 
@@ -140,3 +146,15 @@ std::ostream & operator<<(std::ostream & out, const TicTacToe & a)
 	return out;
 }
 
+
+void TicTacToe::set_winner()
+{
+	if (next_player == "X")
+	{
+		winner = "O";
+	}
+	else
+	{
+		winner = "X";
+	}
+}
