@@ -141,25 +141,26 @@ TEST_CASE("Test win by third row", "[X wins third row]")
 	REQUIRE(board.game_over() == true);
 }
 
-TEST_CASE("Test win by diagonally from top left", "[X wins diagonally from top left]")
+TEST_CASE("Test win by diagonally from top left", "[O wins diagonally 1 5 9")
 {
 	TicTacToe board;
-	board.start_game("X");
+	board.start_game("O");
 	REQUIRE(board.game_over() == false);
-	board.mark_board(1);//X         
+	board.mark_board(1);//O         
 	REQUIRE(board.game_over() == false);
-	board.mark_board(2);//O          
+	board.mark_board(2);//X          
 	REQUIRE(board.game_over() == false);
-	board.mark_board(5);//X          
+	board.mark_board(5);//X       
 	REQUIRE(board.game_over() == false);
-	board.mark_board(3);//O          
+	board.mark_board(3);//X          
 	REQUIRE(board.game_over() == false);
-	board.mark_board(9);//X 
-	//X wins 
+	board.mark_board(9);//O 
+	//O wins 
 	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "O");
 }
 
-TEST_CASE("Test win by diagonally from bottom left", "[X wins diagonally from bottom left]")
+TEST_CASE("Test win by diagonally from bottom left", "[X wins diagonally 7 5 3")
 {
 	TicTacToe board;
 	board.start_game("X");
@@ -175,6 +176,7 @@ TEST_CASE("Test win by diagonally from bottom left", "[X wins diagonally from bo
 	board.mark_board(3);//X 
 	//X wins 
 	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "X");
 }
 
 TEST_CASE("Test for no winner")
@@ -201,4 +203,5 @@ TEST_CASE("Test for no winner")
 	board.mark_board(9);//X 
 	//no winner 
 	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "C");
 }

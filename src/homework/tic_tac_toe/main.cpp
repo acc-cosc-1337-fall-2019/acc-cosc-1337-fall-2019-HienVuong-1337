@@ -1,25 +1,28 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 
 
 int main() 
 {
-	int menu_option;
+	char continue_game = 'y';
+	TicTacToeManager manager;
 	string player;
 	int position;
 
-	cout << "Tic Tac Toe Game\n";
-	cout << "\nHere are the numbers that corresponds to each position: \n";
+	cout << "Tic Tac Toe Game!\n";
+	cout << "\nPosition numbers: \n";
 	cout << "\n 1 | 2 | 3 \n" << " 4 | 5 | 6 \n" << " 7 | 8 | 9 \n";
 
 	do
 	{
-		TicTacToe game1;
-		cout << "\nFirst player, enter X or O: ";
+		TicTacToe game;
+
+		cout << "\nEnter X or O: ";
 		cin >> player;
 	
 		if (player == "X" || player == "x" || player == "O" || player == "o")
 		{
-			game1.start_game(player);
+			game.start_game(player);
 		}
 		else
 		{
@@ -29,16 +32,22 @@ int main()
 
 		do
 		{
-			cin >> game1;
-			cout << game1;
+			cin >> game;
+			cout << game;
 
-		} while (game1.game_over() == false);
+		} while (game.game_over() == false);
+		
+		manager.save_game(game);
 
-		cout << "Winner!\n";
-		cout << "Enter 1 to play again, any other key to exit: \n";
-		cin >> menu_option;
+		cout << "Game over: \n";
+
+		cout << "Enter y to play again: \n";
+		cin >> continue_game;
 	
-	} while (menu_option == 1);
+	} while (continue_game == 'y' || continue_game == 'Y');
+
+	cout << "History: \n";
+	cout << manager;
 
 	return 0;
 }
