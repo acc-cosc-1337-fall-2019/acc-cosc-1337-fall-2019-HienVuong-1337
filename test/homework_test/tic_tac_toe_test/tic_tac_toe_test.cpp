@@ -51,7 +51,7 @@ TEST_CASE("Test set first player O")
 	REQUIRE(board.get_player() == "O");
 }
 
-TEST_CASE("Test win by second column", "[X wins second column]")
+TEST_CASE("Test win by second column", "[X wins second column 2 5 8]")
 {
 	TicTacToe board;
 	board.start_game("X");
@@ -69,7 +69,7 @@ TEST_CASE("Test win by second column", "[X wins second column]")
 	REQUIRE(board.game_over() == true);
 }
 
-TEST_CASE("Test win by third column", "[X wins third column]")
+TEST_CASE("Test win by third column", "[X wins third column 3 6 9]")
 {
 	TicTacToe board;
 	board.start_game("X");
@@ -87,7 +87,7 @@ TEST_CASE("Test win by third column", "[X wins third column]")
 	REQUIRE(board.game_over() == true);
 }
 
-TEST_CASE("Test win by first row", "[X wins first row]")
+TEST_CASE("Test win by first row", "[X wins first row 1 2 3]")
 {
 	TicTacToe board;
 	board.start_game("X");
@@ -105,7 +105,7 @@ TEST_CASE("Test win by first row", "[X wins first row]")
 	REQUIRE(board.game_over() == true);
 }
 
-TEST_CASE("Test win by second row", "[X wins second row]")
+TEST_CASE("Test win by second row", "[X wins second row 4 5 6]")
 {
 	TicTacToe board;
 	board.start_game("X");
@@ -123,7 +123,7 @@ TEST_CASE("Test win by second row", "[X wins second row]")
 	REQUIRE(board.game_over() == true);
 }
 
-TEST_CASE("Test win by third row", "[X wins third row]")
+TEST_CASE("Test win by third row", "[X wins third row 7 8 9]")
 {
 	TicTacToe board;
 	board.start_game("X");
@@ -141,7 +141,7 @@ TEST_CASE("Test win by third row", "[X wins third row]")
 	REQUIRE(board.game_over() == true);
 }
 
-TEST_CASE("Test win by diagonally from top left", "[O wins diagonally 1 5 9")
+TEST_CASE("Test win by diagonally from top left", "[O wins diagonally 1 5 9]")
 {
 	TicTacToe board;
 	board.start_game("O");
@@ -179,7 +179,7 @@ TEST_CASE("Test win by diagonally from bottom left", "[X wins diagonally 7 5 3")
 	REQUIRE(board.get_winner() == "X");
 }
 
-TEST_CASE("Test for no winner")
+TEST_CASE("Test for tie")
 {
 	TicTacToe board;
 	board.start_game("X");
