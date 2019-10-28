@@ -1,24 +1,14 @@
-#include<iostream>
-#include "checking_account.h"
-#include "savings_account.h"
+#include <iostream>
 
 using std::cout;
 
 
 int main()
 {
-	int num = 5;
-	int & num_ref = num; //get the address of num
-	std::cout << "Address: " << &num_ref << std::endl; //output address
-	std::cout << "Value at above address: " << num_ref << std::endl; //output value at address of num
-
-	int * val_ = &num_ref; //point to the address of num
-	std::cout << "Address pointed to: " << val_ << std::endl; //get the address of num
-	std::cout << "Value pointed to: " << *val_ << std::endl; //get the value pointed to by val_
-
-	*val_ = 15; //get the address of num
-	std::cout << "Address pointed to: " << val_ << std::endl; //get the address of num
-	std::cout << "Value pointed to: " << *val_ << std::endl; //get the value pointed to by val_
+	int * ptr_num = new int(5); //acquire dynamic memory
+	std::cout << "Address of: " << ptr_num << std::endl;
+	std::cout << "Value pointed to: " << *ptr_num;
+	delete ptr_num; //YOU MUST REMEMBER TO DELETE ALLOCATED MEMORY
 
 	return 0;
 }
