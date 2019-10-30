@@ -1,14 +1,16 @@
 //circle.h
-#include "shape.h"
 
 #ifndef CIRCLE_H
 #define CIRCLE_H
+
+#include "shape.h"
 
 
 class Circle : public Shape
 {
 public:
-	void draw() { std::cout << "Draw circle"; }
+	void draw() override;
+
 };
 
 #endif 
