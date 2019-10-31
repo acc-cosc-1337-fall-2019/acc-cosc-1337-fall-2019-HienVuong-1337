@@ -18,6 +18,8 @@ using std::ostream;
 class TicTacToe
 {
 public:
+	TicTacToe() {}; //for now create a blank constructor
+	TicTacToe(int size) : pegs(size*size, " ") {};
 	bool game_over();
 	void start_game(string player);
 	void mark_board(int position);
@@ -26,15 +28,17 @@ public:
 	friend std::istream & operator >> (std::istream & in, TicTacToe & a);
 	friend std::ostream & operator << (std::ostream & out, const TicTacToe & a);
 	
+protected:
+	virtual bool check_column_win();
+	virtual bool check_row_win();
+	virtual bool check_diagonal_win();
+	vector<string> pegs;
+
 private:
 	void set_next_player();
-	bool check_column_win();
-	bool check_row_win();
-	bool check_diagonal_win();
 	void clear_board();
 	bool check_board_full();
 	void set_winner();
-	vector<string> pegs{9, " "}; 
 	string next_player;
 	string winner;
 };

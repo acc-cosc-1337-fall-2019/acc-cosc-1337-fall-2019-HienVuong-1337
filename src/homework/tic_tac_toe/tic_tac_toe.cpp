@@ -59,44 +59,19 @@ void TicTacToe::set_next_player()
 
 bool TicTacToe::check_column_win()
 {
-	for (std::size_t i = 0; i < 3; i++)
-	{
-		if (pegs[i] == pegs[i + 3] && pegs[i + 3] == pegs[i + 6] && pegs[i + 6] != " ")
-		{
-			return true;
-		}
-	}
 	return false;
 }
 
 
 bool TicTacToe::check_row_win()
 {
-	for (std::size_t i = 0; i < 9; i+=3)
-	{
-		if (pegs[i] == pegs[i + 1] && pegs[i + 1] == pegs[i + 2] && pegs[i + 2] != " ")
-		{
-			return true;
-		}
-	}
 	return false;
 }
 
 
 bool TicTacToe::check_diagonal_win()
 {
-	if (pegs[0] == pegs[4] && pegs[4] == pegs[8] && pegs[0] != " ")
-	{
-		return true;
-	}
-	if (pegs[2] == pegs[4] && pegs[4] == pegs[6] && pegs[2] != " ")
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return false;
 }
 
 
@@ -121,7 +96,8 @@ bool TicTacToe::check_board_full()
 	return true;
 }
 
-
+//modify so function can handle 9 or 16 pegs
+//if peg legnth vector is 9 do this loop, if peg length vector is 16 then do a new loop
 std::istream & operator>>(std::istream & in, TicTacToe & a)
 {
 	int position;
@@ -132,7 +108,8 @@ std::istream & operator>>(std::istream & in, TicTacToe & a)
 	return in;
 }
 
-
+//modify so function can handle 9 or 16 pegs
+//if peg legnth vector is 9 do this loop, if peg length vector is 16 then do a new loop
 std::ostream & operator<<(std::ostream & out, const TicTacToe & a)
 {
 	for (std::size_t i = 0; i < 9; i += 3)

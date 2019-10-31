@@ -1,28 +1,46 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 #include "tic_tac_toe_manager.h"
 
 
 int main() 
 {
+	//TicTacToe3 three;
+
 	char continue_game = 'y';
 	TicTacToeManager manager;
 	string player;
 	int position;
+	int game_type;
 
 	cout << "Tic Tac Toe Game!\n";
 	cout << "\nPosition numbers: \n";
+	//need to update position numbers for tictactoe4 or maybe toss this into cpp for tictactoe3 
+	//and one for tictactoe4
 	cout << "\n 1 | 2 | 3 \n" << " 4 | 5 | 6 \n" << " 7 | 8 | 9 \n";
 
 	do
 	{
-		TicTacToe game;
+		cout << "Play win by 3 or 4: ";
+		cin >> game_type;
+		TicTacToe* game; //point to an instance of TicTacToe
+
+		if (game_type == 3)
+		{
+			game = new TicTacToe3(); //creating dynamic memory
+		}
+		else
+		{
+			game = new TicTacToe4();
+		}
 
 		cout << "\nEnter X or O: ";
 		cin >> player;
 	
 		if (player == "X" || player == "x" || player == "O" || player == "o")
 		{
-			game.start_game(player);
+			game->start_game(player);
 		}
 		else
 		{
@@ -32,12 +50,12 @@ int main()
 
 		do
 		{
-			cin >> game;
-			cout << game;
+			cin >> *game;
+			cout << *game; //if * isn't placed here it will just display the address
 
-		} while (game.game_over() == false);
+		} while (game->game_over() == false);
 		
-		manager.save_game(game);
+		manager.save_game(*game);
 
 		cout << "Game over: \n";
 
