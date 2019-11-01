@@ -77,7 +77,7 @@ bool TicTacToe::check_diagonal_win()
 
 void TicTacToe::clear_board()
 {
-	for (std::size_t i = 0; i < 9; i++)
+	for (std::size_t i = 0; i < pegs.size(); i++)
 	{
 		pegs[i] = " ";
 	}
@@ -86,7 +86,7 @@ void TicTacToe::clear_board()
 
 bool TicTacToe::check_board_full()
 {
-	for (std::size_t i = 0; i < 9; i++)
+	for (std::size_t i = 0; i < pegs.size(); i++)
 	{
 		if (pegs[i] == " ")
 		{
@@ -96,26 +96,36 @@ bool TicTacToe::check_board_full()
 	return true;
 }
 
-//modify so function can handle 9 or 16 pegs
-//if peg legnth vector is 9 do this loop, if peg length vector is 16 then do a new loop
+
+
 std::istream & operator>>(std::istream & in, TicTacToe & a)
 {
 	int position;
-	cout << "\nEnter a position from 1 to 9: ";
+	cout << "\nEnter a position from 1 to " << a.pegs.size() << ": \n";
 	in >> position;
 	a.mark_board(position);
 
 	return in;
 }
 
-//modify so function can handle 9 or 16 pegs
-//if peg legnth vector is 9 do this loop, if peg length vector is 16 then do a new loop
+
 std::ostream & operator<<(std::ostream & out, const TicTacToe & a)
 {
-	for (std::size_t i = 0; i < 9; i += 3)
+	if (a.pegs.size() == 9)
 	{
-		out << a.pegs[i] << " | " << a.pegs[i + 1] << " | " << a.pegs[i + 2] << "\n";
+		for (std::size_t i = 0; i < 9; i += 3)
+		{
+			out << a.pegs[i] << " | " << a.pegs[i + 1] << " | " << a.pegs[i + 2] << "\n";
+		}
 	}
+	else if (a.pegs.size() == 16)
+	{
+		for (std::size_t i = 0; i < 16; i += 4)
+		{
+			out << a.pegs[i] << " | " << a.pegs[i + 1] << " | " << a.pegs[i + 2] << "\n";
+		}
+	}
+
 	return out;
 }
 

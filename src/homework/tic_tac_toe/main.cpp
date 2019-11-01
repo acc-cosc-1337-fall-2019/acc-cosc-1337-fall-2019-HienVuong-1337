@@ -14,11 +14,10 @@ int main()
 	int position;
 	int game_type;
 
-	cout << "Tic Tac Toe Game!\n";
-	cout << "\nPosition numbers: \n";
-	//need to update position numbers for tictactoe4 or maybe toss this into cpp for tictactoe3 
-	//and one for tictactoe4
-	cout << "\n 1 | 2 | 3 \n" << " 4 | 5 | 6 \n" << " 7 | 8 | 9 \n";
+	cout << "Let's play Tic Tac Toe!\n";
+
+	//cout << "\nPosition numbers: \n";
+	//cout << "\n 1 | 2 | 3 \n" << " 4 | 5 | 6 \n" << " 7 | 8 | 9 \n";
 
 	do
 	{
