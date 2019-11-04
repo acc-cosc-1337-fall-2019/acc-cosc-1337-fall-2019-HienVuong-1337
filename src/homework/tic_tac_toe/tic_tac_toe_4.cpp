@@ -15,7 +15,7 @@ bool TicTacToe4::check_column_win()
 	for (std::size_t i = 0; i < 4; i++)
 	{
 		if (pegs[i] == pegs[i + 4] && pegs[i + 4] == pegs[i + 8] 
-			&& pegs[i + 8] == pegs[i + 8] && pegs[i + 12] != " ")
+			&& pegs[i + 8] == pegs[i + 12] && pegs[i + 12] != " ")
 		{
 			return true;
 		}

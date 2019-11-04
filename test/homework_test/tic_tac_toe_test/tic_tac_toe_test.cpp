@@ -12,20 +12,20 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Test game over")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	REQUIRE(board.game_over() == false);
 }
 
 TEST_CASE("Test set first player X")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("X");
 	REQUIRE(board.get_player() == "X");
 }
 
 TEST_CASE("Test set first player O")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("O");
 	REQUIRE(board.get_player() == "O");
 }
@@ -307,7 +307,7 @@ TEST_CASE("Test win by third column 4", "[X wins third column 3 7 11 15]")
 	REQUIRE(board.game_over() == true);
 }
 
-TEST_CASE("Test win by third column 4", "[X wins fourth column 4 8 12 16]")
+TEST_CASE("Test win by fourth column 4", "[X wins fourth column 4 8 12 16]")
 {
 	TicTacToe4 board;
 	board.start_game("X");
@@ -395,7 +395,7 @@ TEST_CASE("Test win by third row 4", "[X wins third row 9 10 11 12]")
 	REQUIRE(board.game_over() == true);
 }
 
-TEST_CASE("Test win by third row 4", "[X wins fourth row 13 14 15 16]")
+TEST_CASE("Test win by fourth row 4", "[X wins fourth row 13 14 15 16]")
 {
 	TicTacToe4 board;
 	board.start_game("X");
@@ -485,6 +485,21 @@ TEST_CASE("Test for tie 4")
 	board.mark_board(8);//O          
 	REQUIRE(board.game_over() == false);
 	board.mark_board(9);//X 
+	REQUIRE(board.game_over() == false);
+	board.mark_board(10);//O 
+	REQUIRE(board.game_over() == false);
+	board.mark_board(12);//X
+	REQUIRE(board.game_over() == false);
+	board.mark_board(11);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(13);//X
+	REQUIRE(board.game_over() == false);
+	board.mark_board(14);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(15);//X
+	REQUIRE(board.game_over() == false);
+	board.mark_board(16);//O
+
 	//no winner 
 	REQUIRE(board.game_over() == true);
 	REQUIRE(board.get_winner() == "C");
