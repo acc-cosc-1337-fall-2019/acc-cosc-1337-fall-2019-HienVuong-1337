@@ -9,7 +9,8 @@ int main()
 	//TicTacToe3 three;
 
 	char continue_game = 'y';
-	TicTacToeManager manager;
+	unique_ptr<TicTacToeManager> manager = 
+		std::make_unique<TicTacToeManager>();
 	string player;
 	int position;
 	int game_type;
@@ -23,15 +24,15 @@ int main()
 	{
 		cout << "Play win by 3 or 4: ";
 		cin >> game_type;
-		TicTacToe* game; //point to an instance of TicTacToe
+		unique_ptr<TicTacToe> game; 
 
 		if (game_type == 3)
 		{
-			game = new TicTacToe3(); //creating dynamic memory
+			game = std::make_unique<TicTacToe3>(); //telling compilier to use dynamic memory
 		}
 		else
 		{
-			game = new TicTacToe4();
+			game = std::make_unique <TicTacToe4>();
 		}
 
 		cout << "\nEnter X or O: ";
@@ -54,7 +55,7 @@ int main()
 
 		} while (game->game_over() == false);
 		
-		manager.save_game(*game);
+		manager->save_game(game);
 
 		cout << "Game over: \n";
 
