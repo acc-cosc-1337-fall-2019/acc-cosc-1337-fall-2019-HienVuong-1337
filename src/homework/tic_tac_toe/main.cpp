@@ -51,7 +51,7 @@ int main()
 		do
 		{
 			cin >> *game;
-			cout << *game; //if * isn't placed here it will just display the address
+			cout << *game; 
 
 		} while (game->game_over() == false);
 		

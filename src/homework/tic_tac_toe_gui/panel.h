@@ -4,6 +4,7 @@
 #include "grid_sizer_provider.h"
 #include "tic_tac_toe_manager.h"
 
+
 class Panel : public wxPanel
 {
 public:
