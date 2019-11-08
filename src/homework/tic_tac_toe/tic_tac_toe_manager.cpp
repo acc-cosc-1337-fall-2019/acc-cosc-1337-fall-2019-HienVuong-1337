@@ -1,8 +1,6 @@
 //cpp
 
 #include "tic_tac_toe_manager.h"
-#include "tic_tac_toe_3.h"
-#include "tic_tac_toe_4.h"
 
 
 ostream & operator<<(ostream & out, const TicTacToeManager & m)
@@ -43,8 +41,7 @@ void TicTacToeManager::update_winner_count(string winner)
 }
 
 
-//const std::vector<std::unique_ptr<TicTacToe>>& TicTacToeManager::get_games()
-const std::vector<std::unique_ptr<TicTacToeManager>>& TicTacToeManager::get_games()
+const std::vector<std::unique_ptr<TicTacToe>>& TicTacToeManager::get_games()
 {
 	return games;
 }
