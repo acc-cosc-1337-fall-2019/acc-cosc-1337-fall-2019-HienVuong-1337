@@ -12,7 +12,6 @@ int main()
 	unique_ptr<TicTacToeManager> manager = 
 		std::make_unique<TicTacToeManager>();
 	string player;
-	int position;
 	int game_type;
 
 	cout << "Let's play Tic Tac Toe!\n";

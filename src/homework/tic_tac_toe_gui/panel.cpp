@@ -81,7 +81,7 @@ void Panel::on_list_box_click(wxCommandEvent& event)
 
 	wxGridSizer* sizer;
 
-	if (board->get_pegs().size == 9)
+	if (board->get_pegs().size() == 9)
 	{
 		sizer = tic_tac_toe_grid_3;
 		tic_tac_toe_grid_4->Show(false);
