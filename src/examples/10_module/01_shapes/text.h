@@ -3,6 +3,7 @@
 #include<wx/wx.h>
 #include "shape.h"
 #include "point.h"
+//#include "../src/examples/10_module/01_shapes/shape.h"
 
 using std::string;
 
