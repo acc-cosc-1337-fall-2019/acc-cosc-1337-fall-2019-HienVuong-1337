@@ -18,7 +18,7 @@ Vector<T>::Vector(size_t sz)
 	}
 }
 template<typename T>
-Vector<T>::Vector(const Vector& v)
+Vector<T>::Vector(const Vector<T>& v)
 	:size{v.size}, nums{new T[v.size]}
 {
 	for (size_t i = 0; i < size; ++i)
